@@ -3,8 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Amortization</title>
+
+	<!-- ensures proper rendering and touch zooming on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="ericportfolio.css">
+
 </head>
 <body>
+
+	<form action="interest.php" method="post">
+		Loan Amount: <input type="text" name="loan" /><br />
+		Interest Rate: <input type="text" name="interest"><br />
+		Years: <input type="text" name="years"><br />
+		<input type="submit" name="calculate" value="Calculate">
+
+	</form>
 	
 </body>
 </html>
