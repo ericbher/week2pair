@@ -28,8 +28,6 @@
  
     table
     {
-        border: 4px solid black;
-        border-collapse:collapse;
         height:200px;
         width:200px;
     }
