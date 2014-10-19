@@ -1,12 +1,23 @@
-
 <!DOCTYPE html>
 <?php
 
 session_start();
 
-function makeMove(){
+
+
+if(isset($_POST['play'])){
+	
+	$symbol = $_POST['marker'];
+ 	$position = $_POST['position'];
+
+$_SESSION['symbol'] = $symbol;
+$_SESSION['position'] = $position;
 
 }
+
+
+
+
 
 
 
@@ -19,14 +30,7 @@ function makeMove(){
 	<meta charset="UTF-8">
 	<title>Tic Tac Toe</title>
 
-	<!-- ensures proper rendering and touch zooming on mobile devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Latest compiled and minified CSS -->
- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
 
 	<link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
 
@@ -41,6 +45,8 @@ function makeMove(){
 
 		td {
 			border: 1px solid gray;
+			width: 100px;
+			height: 100px;
 		}
 		
 
@@ -57,6 +63,10 @@ function makeMove(){
 		input.marker {
 			width: 100px;
 			height: 100px;
+		}
+
+		p{
+			text-align: center;
 		}
 	</style>
 </head>
@@ -96,33 +106,163 @@ function makeMove(){
 <table>
 	<tr>
 		<td>
+			<p>
 			<?php
 
 			if(isset($_POST['play'])){
-				$symbol = $_POST['marker'];
-				$position = $_POST['position'];
-				if ($symbol = "x" && $position = 'a1'){
+
+				if ($symbol === "x" && $position === "a1"){
 					echo "X"; 
-				} elseif ($symbol = "o" && $position = 'a1'){
+				} elseif ($symbol === "o" && $position === "a1"){
 					echo "O"; 
 				}
-			}
+			} 
 
 
 			?>
+			</p>
 		</td>
-		<td></td>
-		<td></td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "a2"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "a2"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "a3"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "a3"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+			
+		</td>
 	</tr>
 	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "b1"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "b1"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "b2"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "b2"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "b3"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "b3"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
 	</tr>
 	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "c1"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "c1"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "c2"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "c2"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
+		<td>
+			<p>
+			<?php
+
+			if(isset($_POST['play'])){
+
+				if ($symbol === "x" && $position === "c3"){
+					echo "X"; 
+				} elseif ($symbol === "o" && $position === "c3"){
+					echo "O"; 
+				}
+			} 
+
+
+			?>
+			</p>
+		</td>
 	</tr>
 </table>
 	
