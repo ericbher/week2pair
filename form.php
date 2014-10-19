@@ -1,47 +1,113 @@
+<!DOCTYPE html>
+
 <?php
-session_start();
-$submit = $_POST['submit'];
-if (isset($submit)){
 
 
+if(isset($_POST['submit']))
+{
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$select = $_POST['select'];
+	$comments = $_POST['comments'];
+	
 
-$name = $_POST["name"];
-$_SESSION["name"] = $name
-
-
-$email = $_POST["email"];
-$emailvalid = filter_var("$email" , FILTER_VALIDATE_EMAIL);
-if($emailvalid != true){
-	echo "Invalid email.  Please re-enter."
-}
-
-
-$comments = $_POST["comments"];
-$_SESSION["comments"] = $comments
-
-
-
-
-//The support type I'm not too sure about.  I want it to keep its value but I'm not sure where to put the POST
-/*$supporttype = function(){
-	if ($supporttype = "billing"){
-		echo "<option value ="billing">;
-	};
-	else if ($supporttype = "support"){
-		echo "<option value = "support">;
-			else echo "<option value = marketing>";
+	$cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+	if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL)){
+		$cleanEmail = '';
 	}
 
 	
-};*/
+		
+
+
+	
+
+	
 
 
 
-if(isset($submit)){
+	
 
-}
-echo "<input value= $name>";
-echo "<input value= $email>";
-echo "<input value= $comments>";
 
-}
+
+} // end of submit isset
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<title></title>
+<head>
+	
+	<style>
+
+	div {
+		background-color: #A7B3C6;
+		padding: 10px;
+		margin-top: 50px;
+		width: 250px;
+		border-radius: 4px;
+
+	}
+
+
+	</style>
+</head>
+<body>
+	<form action="form.php" method="post">
+		Name: <input type="text" name="name" value ="<?php echo (isset($_POST['submit'])) ? $name : '' ?>" /> <br><br>
+		Email: <input type="text" name="email" value ="<?php echo (isset($_POST['submit'])) ? $cleanEmail : '' ?>" /> <br><br>
+		Support Type: <select name = "select">
+						<option name = "billing" value="billing">Billing</option>
+						<option name ="support" value="support">Support</option>
+						<option name ="marketing" value="marketing">Marketing</option>
+					</select><br><br>
+		Comments: <br /><textarea name = "comments" rows="10" cols="30"></textarea><br><br>
+		<input type="submit" value="Send" name="submit" />
+	</form>
+	
+
+	<?php
+
+	if(isset($_POST['submit'])){
+
+		
+		if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL)){
+			echo "<div>";
+			echo "Invalid e-mail. Please try again."; 
+			echo "</div>";
+		}
+
+
+
+
+
+
+   }
+
+	?>
+
+	
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
