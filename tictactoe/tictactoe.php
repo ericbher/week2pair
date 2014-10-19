@@ -96,10 +96,15 @@ function makeMove(){
 		echo "<tr>";
 		for ($j=0; $j<3; $j++){
 			echo "<td>";
+			echo "<form><input type=\"radio\" name=\"option\" value=\"X\">X<br>
+<input type=\"radio\" name=\"option\" value=\"O\">O";
+			echo "</form>";
 			echo "<input type=\"submit\" name=\"$i . $j\" value = \"\" class = \"marker\" >";
 			echo "</td>";
+			
 		}
 	echo "</tr>";
+	
 
 
 
@@ -108,9 +113,22 @@ function makeMove(){
 	echo "</table>"
 
 	?>
-	
-	
-	
+	<table>
+		<tr>
+			<td>cell</td>
+			<td>cell</td>
+			<td>cell</td>
+		</tr>	
+		<tr>
+			<td>cell</td>
+			<td>cell</td>
+			<td>cell</td>
+		</tr>	
+		<tr>
+			<td>cell</td>
+			<td>cell</td>
+			<td>cell</td>
+		</tr>	
 	</div>
 </body>
 </html>
