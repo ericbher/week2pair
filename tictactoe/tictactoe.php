@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php
 
@@ -41,6 +42,7 @@ function makeMove(){
 		td {
 			border: 1px solid gray;
 		}
+		
 
 		.square {
     		width: 100px;  
@@ -78,7 +80,7 @@ function makeMove(){
 	$playero = 0; // Player O is set to 0
 	$turn = 0; // Turn counter
 
-	for ($i = 1; $turn < 9; $i++){
+	/*for ($i = 1; $turn < 9; $i++){
 		if ($i % 2 == $playerx) {
 			echo "<h1>Player X is up.</h1>";
 			makeMove();
@@ -87,48 +89,80 @@ function makeMove(){
 		echo "<h1>Player O is up.</h1>";
 		$turn++;
 	}
-}
+}*/
 
-	//Creates the tic tac toe board
-	echo "<table>";
+?>
 
-	for ($i=0; $i<3; $i++){
-		echo "<tr>";
-		for ($j=0; $j<3; $j++){
-			echo "<td>";
-			echo "<form><input type=\"radio\" name=\"option\" value=\"X\">X<br>
-<input type=\"radio\" name=\"option\" value=\"O\">O";
-			echo "</form>";
-			echo "<input type=\"submit\" name=\"$i . $j\" value = \"\" class = \"marker\" >";
-			echo "</td>";
-			
-		}
-	echo "</tr>";
+<table>
+	<tr>
+		<td>
+			<?php
+
+			if(isset($_POST['play'])){
+				$symbol = $_POST['marker'];
+				$position = $_POST['position'];
+				if ($symbol = "x" && $position = 'a1'){
+					echo "X"; 
+				} elseif ($symbol = "o" && $position = 'a1'){
+					echo "O"; 
+				}
+			}
+
+
+			?>
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+	
 	
 
+	
+
+	<form action="tictactoe.php" method="post">
+	Choose your symbol:<br />
+	<input type="radio" name="marker" value="x"> X
+	<input type="radio" name="marker" value="o"> O<br /><br />
+
+	Choose your location:
+	<select id = "position" name = "position">
+  	<option value="a1">Top Left</option>
+  	<option value="a2">Top Center</option>
+  	<option value="a3">Top Right</option>
+  	<option value="b1">Middle Left</option>
+  	<option value="b2">Middle Center</option>
+  	<option value="b3">Middle Right</option>
+  	<option value="c1">Bottom Left</option>
+  	<option value="c2">Bottom Center</option>
+  	<option value="c3">Bottom Right</option>
+	</select>
+
+	<input type="submit" value = "Play Choice" name = 'play' />
 
 
-	}
+	</form>
 
-	echo "</table>"
+
+
+	<?php
+
+
 
 	?>
-	<table>
-		<tr>
-			<td>cell</td>
-			<td>cell</td>
-			<td>cell</td>
-		</tr>	
-		<tr>
-			<td>cell</td>
-			<td>cell</td>
-			<td>cell</td>
-		</tr>	
-		<tr>
-			<td>cell</td>
-			<td>cell</td>
-			<td>cell</td>
-		</tr>	
+	
+	
+	
 	</div>
 </body>
 </html>
